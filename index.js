@@ -1,49 +1,17 @@
-
-import Image from 'next/image'
-import Head from 'next/head'
-
 export default function Home() {
   return (
-    <div style={{ textAlign: 'center' }}>
-      <Head>
-        <title>Markazul Uloom Al Islamia Bangladesh</title>
-      </Head>
-      <header>
-        <Image src="/logo.png" alt="Logo" width={150} height={150} />
-        <Image src="/banner.jpg" alt="Banner" width={800} height={100} />
-      </header>
-      <main style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-        gap: '1rem',
-        padding: '2rem'
-      }}>
-        {[
-          ['পরিচিতি', 'প্রতিষ্ঠানের বিস্তারিত তথ্য'],
-          ['বিভাগসমূহ', 'শিক্ষার বিভিন্ন বিভাগ'],
-          ['শিক্ষা কার্যক্রম', 'পাঠ্যসূচি ও কোর্স'],
-          ['শিক্ষকমণ্ডলী', 'আমাদের শিক্ষকমণ্ডলী'],
-          ['লাইব্রেরি', 'পাঠাগার সুবিধা'],
-          ['হোস্টেল সুবিধা', 'আবাসিক সুবিধাদি'],
-          ['ফি ও বেতন', 'শিক্ষা খরচের তথ্য'],
-          ['দাতা ও সহযোগীগণ', 'আমাদের সহযোগীরা'],
-          ['ফটো গ্যালারি', 'ছবির সংগ্রহ'],
-          ['ভিডিও গ্যালারি', 'ভিডিও সংগ্রহ']
-        ].map(([title, desc], idx) => (
-          <div key={idx} style={{
-            borderRadius: '12px',
-            background: '#e0f7f1',
-            padding: '1rem',
-            boxShadow: '0 0 10px rgba(0,0,0,0.1)'
-          }}>
+    <main style={{ padding: '2rem', fontFamily: 'Arial' }}>
+      <img src="/banner.jpg" alt="Banner" style={{ width: '100%' }} />
+      <h1 style={{ color: '#00796b' }}>মারকাজুল উলুম আল-ইসলামিয়া বাংলাদেশ</h1>
+      <p>এটি একটি ডাইনামিক ওয়েবসাইটের ডেমো। ইনশাআল্লাহ ভবিষ্যতে আরও ফিচার যুক্ত হবে।</p>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginTop: '2rem' }}>
+        {['পরিচিতি','বিভাগসমূহ','শিক্ষা কার্যক্রম','শিক্ষকমণ্ডলী','লাইব্রেরি','হোস্টেল সুবিধা','ফি ও বেতন','দাতা ও সহযোগীগণ','ফটো গ্যালারি','ভিডিও গ্যালারি'].map(title => (
+          <div style={{ backgroundColor: '#e0f2f1', padding: '1rem', borderRadius: '8px' }} key={title}>
             <h3>{title}</h3>
-            <p>{desc}</p>
+            <p>তথ্য শীঘ্রই আসছে...</p>
           </div>
         ))}
-      </main>
-      <footer style={{ padding: '1rem', fontSize: '0.8rem' }}>
-        &copy; ২০২৫ মারকাজুল উলুম আল ইসলামিয়া বাংলাদেশ
-      </footer>
-    </div>
-  )
+      </div>
+    </main>
+  );
 }
